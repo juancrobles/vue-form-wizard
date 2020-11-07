@@ -17,15 +17,15 @@
                  :class="{square_shape:isStepSquare, tab_shape:isTabShape}"
                  :style="[tab.active ? iconActiveStyle: {}, tab.validationError ? errorStyle : {}]">
               <slot name="active-step">
-                <i v-if="tab.icon" :class="[tab.iconPack, tab.iconPack !== 'material-icons' ? tab.icon : '']" class="wizard-icon">
-                  {{ tab.iconPack === 'material-icons' ? tab.icon : '' }}
+                <i v-if="tab.icon" :class="[tab.iconPack, !tab.iconPack.includes('material-icons') ? tab.icon : '']" class="wizard-icon">
+                  {{ tab.iconPack.includes('material-icons') ? tab.icon : '' }}
                 </i>
                 <i v-else class="wizard-icon">{{index + 1}}</i>
               </slot>
             </div>
             <slot v-if="!tab.active">
-              <i v-if="!tab.active && tab.icon" :class="[tab.iconPack, tab.iconPack !== 'material-icons' ? tab.icon : '']" class="wizard-icon">
-                {{ tab.iconPack === 'material-icons' ? tab.icon : '' }}
+              <i v-if="!tab.active && tab.icon" :class="[tab.iconPack, !tab.iconPack.includes('material-icons') ? tab.icon : '']" class="wizard-icon">
+                {{ tab.iconPack.includes('material-icons') ? tab.icon : '' }}
               </i>
               <i v-if="!tab.active && !tab.icon" class="wizard-icon">{{index + 1}}</i>
             </slot>
