@@ -24,6 +24,13 @@
         default: ''
       },
       /***
+       * Icon custom slot for the upper circle corresponding to the tab
+       */
+      iconSlot: {
+        type: Boolean,
+        default: false
+      },
+      /***
        * Only render the content when the tab is active
        */
       lazy: {
