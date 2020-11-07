@@ -25,6 +25,9 @@
                        @keyup.enter.native="navigateToTab(index)"
                        :transition="transition"
                        :index="index">
+            <slot name="custom-icon" slot="custom-icon">
+              T
+            </slot>
           </wizard-step>
         </slot>
       </ul>
