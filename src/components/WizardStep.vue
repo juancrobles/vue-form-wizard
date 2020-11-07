@@ -19,7 +19,7 @@
               <slot name="active-step">
                 <slot name="icon" v-if="tab.iconSlot"></slot>
                 <i v-if="tab.icon && !tab.iconSlot" :class="tab.icon" class="wizard-icon"></i>
-                <i v-else class="wizard-icon active-tab">{{index + 1}}</i>
+                <i v-else-if="!tab.iconSlot" class="wizard-icon active-tab">{{index + 1}}</i>
               </slot>
             </div>
             <slot v-if="!tab.active">
