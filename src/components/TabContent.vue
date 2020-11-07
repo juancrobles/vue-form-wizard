@@ -24,6 +24,13 @@
         default: ''
       },
       /***
+       * Icon pack name corresponding
+       */
+      iconPack: {
+        default: '',
+        type: String
+      },
+      /***
        * Only render the content when the tab is active
        */
       lazy: {
