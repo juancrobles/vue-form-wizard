@@ -13,19 +13,19 @@
 
         <transition :name="transition" mode="out-in">
 
-            <div v-if="tab.active" class="wizard-icon-container"
+            <div v-if="tab.active" class="wizard-icon-container" :debug="tab.iconSlot"
                  :class="{square_shape:isStepSquare, tab_shape:isTabShape}"
                  :style="[tab.active ? iconActiveStyle: {}, tab.validationError ? errorStyle : {}]">
               <slot name="active-step">
                 <slot name="icon" v-if="tab.iconSlot"></slot>
                 <i v-if="tab.icon && !tab.iconSlot" :class="tab.icon" class="wizard-icon"></i>
-                <i v-else class="wizard-icon">{{index + 1}}</i>
+                <i v-else class="wizard-icon active-tab">{{index + 1}}</i>
               </slot>
             </div>
             <slot v-if="!tab.active">
               <slot name="icon" v-if="tab.iconSlot"></slot>
               <i v-if="!tab.active && tab.icon && !tab.iconSlot" :class="tab.icon" class="wizard-icon"></i>
-              <i v-if="!tab.active && !tab.icon && !tab.iconSlot" class="wizard-icon">{{index + 1}}</i>
+              <i v-if="!tab.active && !tab.icon && !tab.iconSlot" class="wizard-icon inactive-tab">{{index + 1}}</i>
             </slot>
         </transition>
 
